@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import SaludoComponent from '../components/SaludoComponent'
 import CardChildren from '../components/CardChildren'
@@ -47,11 +47,17 @@ export default function AppView() {
     console.log("Evento: ",elemento)
   }
 
+  
   const [isTrue, setTrue] = useState(false)
   // if(isTrue){
   //   return <div>Soy verdadero</div>
   // }
   
+  useEffect(() => {
+    console.log("Este es el useEffect ejecutándose")
+  },[isTrue])
+
+
   return (
     <>
         <h1 className='text-5xl'>App View</h1>

@@ -4,6 +4,12 @@ import AppView from "./views/AppView";
 import OtraView from "./views/OtraView";
 import ExtraView from "./views/ExtraView";
 import ParamView from "./views/ParamView";
+import ProductLayout from "./layouts/ProductLayout";
+import MainView from "./views/MainView";
+import ProductsView from "./views/ProductsView";
+import CreateProductView from "./views/CreateProductView";
+import EditProductView from "./views/EditProductView";
+
 
 export default function Router(){
     return(
@@ -14,6 +20,12 @@ export default function Router(){
                     <Route path='/otra' element={<OtraView/>} />
                     <Route path='/extra' element={<ExtraView/>} />
                     <Route path='/parametro/:id' element={<ParamView/>}/>
+                </Route>
+                <Route element={<ProductLayout />}>
+                    <Route path='/' element={<MainView />} index />
+                    <Route path='/products' element={<ProductsView />} />
+                    <Route path='/products/create' element={<CreateProductView />} />
+                    <Route path='/products/:id' element={<EditProductView />} />
                 </Route>
             </Routes>
         </BrowserRouter>
